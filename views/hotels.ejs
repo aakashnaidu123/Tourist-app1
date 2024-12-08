@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotels</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/hotels" class="active">Hotels</a>
+        <a href="/restaurants">Restaurants</a>
+        <a href="/attractions">Nearby Attractions</a>
+        <a href="/logout">Logout</a>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <h1>Nearby Hotels</h1>
+        <ul>
+            <% hotels.forEach(hotel => { %>
+                <li>
+                    <h2><%= hotel.name %></h2>
+                    <p>Location: <%= hotel.location %></p>
+                    <button onclick="getDirections('<%= hotel.latitude %>', '<%= hotel.longitude %>')">Get Directions</button>
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+
+    <!-- JavaScript for Directions -->
+    <script>
+        function getDirections(lat, lng) {
+            const url = `https://www.google.com/maps?q=${lat},${lng}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>

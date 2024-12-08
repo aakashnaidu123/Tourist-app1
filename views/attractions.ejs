@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nearby Attractions</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/hotels">Hotels</a>
+        <a href="/restaurants">Restaurants</a>
+        <a href="/attractions" class="active">Nearby Attractions</a>
+        <a href="/logout">Logout</a>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <h1>Nearby Attractions</h1>
+        <ul>
+            <% attractions.forEach(attraction => { %>
+                <li>
+                    <h2><%= attraction.name %></h2>
+                    <p>Location: <%= attraction.location %></p>
+                    <button onclick="getDirections('<%= attraction.latitude %>', '<%= attraction.longitude %>')">Get Directions</button>
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+
+    <!-- JavaScript for Directions -->
+    <script>
+        function getDirections(lat, lng) {
+            const url = `https://www.google.com/maps?q=${lat},${lng}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>

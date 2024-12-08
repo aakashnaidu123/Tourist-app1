@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Tourist Guide</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <h2>Tourist Guide</h2>
+        </div>
+        <div class="nav-links">
+            <a href="/dashboard" class="active">Dashboard</a>
+            <a href="/hotels">Hotels</a>
+            <a href="/restaurants">Restaurants</a>
+            <a href="/attractions">Nearby Attractions</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Welcome back, <%= user.username %>!</h1>
+        <p>Plan your next great adventure today!</p>
+        <button class="search-btn">Search for Hotels</button>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="quick-actions">
+        <div class="card">
+            <h3>Book Hotels</h3>
+            <p>Find the best hotels around you.</p>
+            <button onclick="window.location.href='/hotels'">Explore Hotels</button>
+
+        </div>
+        <div class="card">
+            <h3>Restaurants</h3>
+            <p>Discover great places to eat.</p>
+            <button>Find Now</button>
+        </div>
+        <div class="card">
+            <h3>Nearby Attractions</h3>
+            <p>Explore exciting attractions near you.</p>
+            <button>Explore</button>
+        </div>
+    </div>
+
+    <!-- Popular Locations Section -->
+    <div class="popular-places">
+        <h2>Popular Tourist Spots</h2>
+        <div class="places">
+            <div class="place">
+                <img src="/images/spot1.jpg" alt="Spot 1">
+                <h3>Beach Resort</h3>
+                <p>Relax at a beautiful beach resort.</p>
+            </div>
+            <div class="place">
+                <img src="/images/spot2.jpg" alt="Spot 2">
+                <h3>Mountain View</h3>
+                <p>Enjoy scenic mountain views.</p>
+            </div>
+            <div class="place">
+                <img src="/images/spot3.jpg" alt="Spot 3">
+                <h3>City Center</h3>
+                <p>Explore the vibrant city life.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
